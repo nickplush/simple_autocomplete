@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Autocomplete from "./components/ Autocomplete";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const generateArray = (count) => {
+    const newArray = [0]
+    for(let i = 0; i<count; i++){
+      newArray.push(i)
+    }
+   return newArray
+  }
+  return <Autocomplete arr={generateArray(10000)}/>
 }
 
 export default App;
