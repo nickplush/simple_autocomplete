@@ -1,16 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import Autocomplete from "./components/ Autocomplete";
+import {generateArray} from "./utils";
 
 function App() {
-  const generateArray = (count) => {
-    const newArray = [0]
-    for(let i = 0; i<count; i++){
-      newArray.push(i)
+    const [resp, setResp] = useState()
+    const valueSelection = (value) => {
+        setResp(value)
     }
-   return newArray
-  }
-  return <Autocomplete arr={generateArray(10000)}/>
+
+    return (
+        <div className="App">
+            <Autocomplete arr={generateArray(10000)} valueSelection={valueSelection}/>
+            <div data-testid="content" className='content'>
+                <h1>{resp}</h1>
+            </div>
+        </div>
+    )
 }
 
 export default App;

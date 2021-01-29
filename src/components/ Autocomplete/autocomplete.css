@@ -1,15 +1,18 @@
 .container{
     max-height: 300px;
     width: 400px;
-    border: 1px solid black;
-    overflow: auto;
 }
 .variant{
     display: flex;
     height: 30px;
     align-items: center;
-    border-top: 1px solid black;
+}
+.variant:hover{
+    background: #c7c7c7 !important;
 }
 .choose{
     background: #a1a1a1;
+}
+.autocomplete{
+    width: 98%;
 }
